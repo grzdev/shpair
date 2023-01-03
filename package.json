@@ -16,6 +16,7 @@
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",
     "@stripe/stripe-js": "^1.46.0",
+    "canvas-confetti": "^1.6.0",
     "framer-motion": "^8.0.2",
     "next": "13.1.1",
     "react": "18.2.0",
