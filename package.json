@@ -15,11 +15,14 @@
     "@next/font": "13.1.1",
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",
+    "@stripe/stripe-js": "^1.46.0",
     "framer-motion": "^8.0.2",
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.7.1"
+    "react-hot-toast": "^2.4.0",
+    "react-icons": "^4.7.1",
+    "stripe": "^11.5.0"
   },
   "devDependencies": {
     "eslint": "8.31.0",
