@@ -14,7 +14,7 @@ const  Home = ({products, bannerData}) => {
         heroBanner={bannerData.length && bannerData[0]}
       />
 
-      <div className='products-heading'> 
+      {/* <div className='products-heading'> 
         <h2>Best Selling Products</h2>
         <p>Sneakers of many variations</p>
       </div>
@@ -25,7 +25,7 @@ const  Home = ({products, bannerData}) => {
         )}
       </div>
 
-      <FooterBanner footerBanner={bannerData && bannerData[0]}/>
+      <FooterBanner footerBanner={bannerData && bannerData[0]}/> */}
     </div>
   )
 }
