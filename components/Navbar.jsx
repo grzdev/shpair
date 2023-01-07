@@ -35,7 +35,7 @@ const Navbar = () => {
     <HStack>
       <Flex
         p={[1, 2, 3]}
-        alignItem="center"
+        alignItems="center"
         justifyContent='center'
         mr='auto'
       >

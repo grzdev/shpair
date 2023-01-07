@@ -1,3 +1,4 @@
+import { Heading, Box, Flex, useColorModeValue, Container } from '@chakra-ui/react';
 import React from 'react'
 import {
   Products,
@@ -7,8 +8,10 @@ import {
 import { client } from '../lib/client';
 
 const  Home = ({products, bannerData}) => {
+  const headerColor = useColorModeValue("#324361", "white")
+
   return (
-    <div>
+    <Container centerContent>
 
       <HeroBanner
         heroBanner={bannerData.length && bannerData[0]}
@@ -17,16 +20,51 @@ const  Home = ({products, bannerData}) => {
       {/* <div className='products-heading'> 
         <h2>Best Selling Products</h2>
         <p>Sneakers of many variations</p>
-      </div>
+      </div> */}
+      
+      <Flex
+        alignItems='center'
+        justifyContent="center"
+        flexDir='column'
+        mt={["3rem", "4rem",'5rem']}
+      >
+        <Heading
+          size={["lg","lg",'xl']}
+          color={headerColor}
+        >
+          Best Selling Sneakers
+        </Heading>
 
-      <div className='products-container'>
+        <Heading
+          size={["xs","md","sm"]}
+          color={headerColor}
+          mt="-0.1rem"
+        >
+          kicks of many variations
+        </Heading>
+      </Flex>
+      
+
+      {/* <div className='products-container'>
         {products?.map(
           (product) => <Products key={product._id} product={product}/>
         )}
-      </div>
+      </div> */}
+      <Flex
+        mt={["1.3rem","1.6rem","2rem"]}
+        whiteSpace="nowrap"
+        gap= "2rem"
+        overflowX="scroll"
+        w={["21rem", "50rem", "80rem"]}
+        flexDir="row"
+      >
+        {products?.map(
+          (product) => <Products key={product._id} product={product}/>
+        )}
+      </Flex>
 
-      <FooterBanner footerBanner={bannerData && bannerData[0]}/> */}
-    </div>
+      {/* <FooterBanner footerBanner={bannerData && bannerData[0]}/> */}
+    </Container>
   )
 }
 
