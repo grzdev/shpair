@@ -51,7 +51,7 @@ const  Home = ({products, bannerData}) => {
         )}
       </div> */}
       <Flex
-        mt={["0.7rem","1.6rem","2rem"]}
+        mt={["0.5rem","1.6rem","1.4rem"]}
         whiteSpace="nowrap"
         gap= "1.5rem"
         overflowX="scroll"
@@ -63,7 +63,10 @@ const  Home = ({products, bannerData}) => {
         )}
       </Flex>
 
-      {/* <FooterBanner footerBanner={bannerData && bannerData[0]}/> */}
+      <Flex>
+        <FooterBanner footerBanner={bannerData && bannerData[0]}/>
+      </Flex>
+
     </Container>
   )
 }
