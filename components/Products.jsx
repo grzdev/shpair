@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { urlFor } from '../lib/client'
 
 const Products = ({ product: {image, name, slug, price} }) => {
-  const cardBg = useColorModeValue("#e3e3e3", "#263644")
+  const cardBg = useColorModeValue("#F6F6F6", "#263644")
 
   return (
     // <div>
@@ -27,13 +27,15 @@ const Products = ({ product: {image, name, slug, price} }) => {
         <Link href={`/product/${slug.current}`}>
           <Card
             bgColor={cardBg}
+            border='none'
             
           >
-            <CardBody>
+            <CardBody border='none'>
               <Image
                 src={urlFor(image && image[0])}
                 maxW={["9rem","13rem","13rem"]}
                 alt='sneakers'
+                boxSize={["10rem", "10rem",'15rem']}
               />
               
               <Stack>

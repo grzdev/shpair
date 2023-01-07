@@ -26,7 +26,7 @@ const  Home = ({products, bannerData}) => {
         alignItems='center'
         justifyContent="center"
         flexDir='column'
-        mt={["3rem", "4rem",'5rem']}
+        mt={["4rem", "4rem",'5rem']}
       >
         <Heading
           size={["lg","lg",'xl']}
@@ -35,13 +35,13 @@ const  Home = ({products, bannerData}) => {
           Best Selling Sneakers
         </Heading>
 
-        <Heading
+        {/* <Heading
           size={["xs","md","sm"]}
           color={headerColor}
           mt="-0.1rem"
         >
           kicks of many variations
-        </Heading>
+        </Heading> */}
       </Flex>
       
 
@@ -51,7 +51,7 @@ const  Home = ({products, bannerData}) => {
         )}
       </div> */}
       <Flex
-        mt={["1.3rem","1.6rem","2rem"]}
+        mt={["0.7rem","1.6rem","2rem"]}
         whiteSpace="nowrap"
         gap= "1.5rem"
         overflowX="scroll"
