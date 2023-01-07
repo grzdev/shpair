@@ -53,9 +53,9 @@ const  Home = ({products, bannerData}) => {
       <Flex
         mt={["1.3rem","1.6rem","2rem"]}
         whiteSpace="nowrap"
-        gap= "2rem"
+        gap= "1.5rem"
         overflowX="scroll"
-        w={["21rem", "50rem", "80rem"]}
+        w={["20rem", "50rem", "80rem"]}
         flexDir="row"
       >
         {products?.map(
