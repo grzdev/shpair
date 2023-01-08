@@ -5,7 +5,7 @@ import { Container, Box, Text, Heading, Flex, Image, VStack, Button} from '@chak
 import { useColorModeValue } from '@chakra-ui/react'
 
 const FooterBanner = ({footerBanner: { discount, desc, largeText1, largeText2, smallText, saleTime, buttonText, midText, product, image}}) => {
-  const bannerColor = useColorModeValue('#F02D34' , '#70a1c8')
+  const bannerColor = useColorModeValue('#bf272c' , '#70a1c8')
   const header = useColorModeValue("white" , "black")
   const shopBox = useColorModeValue("#881619", "#c42227")
 

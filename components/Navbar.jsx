@@ -51,7 +51,7 @@ const Navbar = () => {
             fontSize={['1.15rem', '1,2rem',  "1.3rem"]}
             fontWeight="700"
             ml="0.1rem"
-            mt={["0.35rem", "none", "none"]}
+            mt={["0.17rem", "none", "0.2rem"]}
           >
             shpair
           </Text>
