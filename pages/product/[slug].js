@@ -3,12 +3,14 @@ import { client, urlFor } from '../../lib/client'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { Products } from '../../components'
 import { useStateContext } from '../../context/StateContext'
-import { Box, Container, Flex, Heading, HStack, Image,  } from '@chakra-ui/react'
+import { Box, Container, Flex, Text, Button, Heading, HStack, Image, useColorModeValue,  } from '@chakra-ui/react'
 
 const ProductDetails = ({products, product}) => {
   const { image, name, details, price } = product;
   const [ index, setIndex ]= useState(0);
   const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext()
+  const ratingColor = useColorModeValue("#e0242c", "#70A1C8")
+  const colorScheme = useColorModeValue("red", "blue")
 
   const handleBuyNow = () => {
     onAdd(product, qty);
@@ -98,7 +100,7 @@ const ProductDetails = ({products, product}) => {
     //         <button
     //           type='button'
     //           className='buy-now'
-    //           onClick={handleBuyNow}
+    //           onClick={()=> onAdd(product, qty)}
     //         >
     //           Buy now
     //         </button>
@@ -122,61 +124,134 @@ const ProductDetails = ({products, product}) => {
     // </div>
 
     <Container centerContent>
-      <HStack>
-        <Flex>
-          <Image
-            src={urlFor(image && image[index])}
+      <Flex
+        mt="4rem"
+        flexDir={["column", "row"]}
+        alignItems="center"
+        justifyContent="center"
+      >
+        {/* <Flex
+          alignItems="center"
+          justifyContent="center"
+        > */}
+          <Box
+            w={["20rem","60rem"]}
+            mr={["none",'-20rem']}
+            
+          >
+            <Image
+              src={urlFor(image && image[index])}
+              // w="25rem"
+              // h="25rem"
+            />  
 
-          />
+            {/* <Flex>
+              {image?.map((item, i)=>(
+                  <img
+                    key={i}
+                    src={urlFor(item)}
+                    className={i === index ? 'small-image selected-image' : 'small-image'}
+                    onMouseEnter={()=> setIndex(i)}
+                  />
+                  <Image
+                    key={i}
+                    src={urlFor(item)}
+                    onMouseEnter={()=> setIndex(i)}
+                  />
+                ))}
+            </Flex> */}
+          </Box>
 
-          {/* <Flex>
-            {image?.map((item, i)=>(
-                <img
-                  key={i}
-                  src={urlFor(item)}
-                  className={i === index ? 'small-image selected-image' : 'small-image'}
-                  onMouseEnter={()=> setIndex(i)}
-                />
-                <Image
-                  key={i}
-                  src={urlFor(item)}
-                  onMouseEnter={()=> setIndex(i)}
-                />
-              ))}
-          </Flex> */}
-        </Flex>
+          <Box
+            w={["xs", "md"]}
+          >
+            <Flex
+              flexDir='column'
+            >
+              <Heading
+                mt="4rem"
+                size="lg"
+              >
+                {name}
+              </Heading>
 
-        <Flex>
-          <Heading>
-            {name}
-          </Heading>
+              <Flex
+                flexDir='row'
+                alignItems="center"
+                // mt="0.2rem"
+              >
+                <Flex
+                  mr="0.4rem"
+                >
+                  <AiFillStar color={ratingColor}/>
+                  <AiFillStar color={ratingColor}/>
+                  <AiFillStar color={ratingColor}/>
+                  <AiFillStar color={ratingColor}/>
+                  <AiOutlineStar/>
+                </Flex>
 
-          <Box>
-            <Flex>
-              <AiFillStar/>
-              <AiFillStar/>
-              <AiFillStar/>
-              <AiFillStar/>
-              <AiOutlineStar/>
+                <Flex>
+                  (20)
+                </Flex>
+              </Flex>
+
+              
+            <Box
+              mt="1.5rem"
+            >
+              <Heading
+                size="sm"
+              >
+                Details: 
+              </Heading>
+              
+              <Text
+                mt="0.5rem"
+                fontSize="1rem"
+                noOfLines={5}
+              >
+                {details}
+              </Text>
+            </Box>
+
+            <Heading
+              mt="1.7rem"
+              color={ratingColor}
+              size="md"
+            >
+              ${price}
+            </Heading>
+
+              <Flex
+                mt="3rem"
+                justifyContent={["center", "", ""]}
+                alignItems={["center", "", ""]}
+              >
+                <Button
+                  onClick={()=> onAdd(product, qty)}
+                  variant='outline'
+                  mr="1.7rem"
+                  colorScheme={colorScheme}
+                  size="md"
+                >
+                  Add to cart
+                </Button>
+              
+                <Button
+                  onClick={()=> onAdd(product, qty)}
+                  colorScheme={colorScheme}
+                  size="md"
+                >
+                  Buy Now
+                </Button>
+              </Flex>
             </Flex>
 
-            <Flex>
-              {20}
-            </Flex>
+            
           </Box>
-
-          <Box>
-            <Heading>Details: </Heading>
-            <Text>
-              {details}
-            </Text>
-          </Box>
-
-          <Box>
-            ${price}
-          </Box>
-        </Flex>
-      </HStack>
+        {/* </Flex> */}
+       
+      </Flex>
     </Container>
   )
 }
