@@ -63,8 +63,45 @@ const  Home = ({products, bannerData}) => {
         )}
       </Flex>
 
-      <Flex>
+      <Flex
+        mt="2rem"
+      >
         <FooterBanner footerBanner={bannerData && bannerData[0]}/>
+      </Flex>
+
+      <Flex
+        alignItems='center'
+        justifyContent="center"
+        flexDir='column'
+        mt={["4rem", "4rem",'5rem']}
+      >
+        <Heading
+          size={["lg","lg",'xl']}
+          color={headerColor}
+        >
+          Onsale Sneakers
+        </Heading>
+
+        {/* <Heading
+          size={["xs","md","sm"]}
+          color={headerColor}
+          mt="-0.1rem"
+        >
+          kicks of many variations
+        </Heading> */}
+      </Flex>
+
+      <Flex
+        mt={["0.5rem","1.6rem","1.1rem"]}
+        whiteSpace="nowrap"
+        gap= "1.5rem"
+        overflowX="scroll"
+        w={["20rem", "50rem", "80rem"]}
+        flexDir="row"
+      >
+        {products?.map(
+          (product) => <Products key={product._id} product={product}/>
+        )}
       </Flex>
 
     </Container>
