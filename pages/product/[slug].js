@@ -3,7 +3,7 @@ import { client, urlFor } from '../../lib/client'
 import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import { Products } from '../../components'
 import { useStateContext } from '../../context/StateContext'
-import { Box, Container, Flex, HStack, Image,  } from '@chakra-ui/react'
+import { Box, Container, Flex, Heading, HStack, Image,  } from '@chakra-ui/react'
 
 const ProductDetails = ({products, product}) => {
   const { image, name, details, price } = product;
@@ -147,7 +147,34 @@ const ProductDetails = ({products, product}) => {
         </Flex>
 
         <Flex>
+          <Heading>
+            {name}
+          </Heading>
 
+          <Box>
+            <Flex>
+              <AiFillStar/>
+              <AiFillStar/>
+              <AiFillStar/>
+              <AiFillStar/>
+              <AiOutlineStar/>
+            </Flex>
+
+            <Flex>
+              {20}
+            </Flex>
+          </Box>
+
+          <Box>
+            <Heading>Details: </Heading>
+            <Text>
+              {details}
+            </Text>
+          </Box>
+
+          <Box>
+            ${price}
+          </Box>
         </Flex>
       </HStack>
     </Container>
