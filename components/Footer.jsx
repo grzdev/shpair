@@ -14,7 +14,7 @@ const textColor = useColorModeValue('white', 'white')
       centerContent
     >
       <Box
-        w={['24.8rem', '60rem', '94.8rem']}
+        w={['24.4rem', '60rem', '94.4rem']}
         h='10rem'
         bg={bgColor}
         // borderRadius='1rem'
