@@ -6,7 +6,7 @@ import { useColorModeValue } from '@chakra-ui/react'
 
 const HeroBanner = ({heroBanner}) => {
   
-  const bannerColor = useColorModeValue('#cae4f7' , '#385063')
+  const bannerColor = useColorModeValue('#cae4f7' , '#577e9d')
   const header = useColorModeValue("white" , "black")
   const shopBox = useColorModeValue("#881619", "#c42227")
 

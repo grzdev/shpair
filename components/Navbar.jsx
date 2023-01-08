@@ -48,10 +48,10 @@ const Navbar = () => {
         
         <Link href='/'>
           <Text
-            fontSize={['1.1rem', '1,2rem',  "1.3rem"]}
+            fontSize={['1.15rem', '1,2rem',  "1.3rem"]}
             fontWeight="700"
             ml="0.1rem"
-            mt={["0.2rem", "none", "none"]}
+            mt={["0.35rem", "none", "none"]}
           >
             shpair
           </Text>

@@ -79,7 +79,7 @@ const  Home = ({products, bannerData}) => {
           size={["lg","lg",'xl']}
           color={headerColor}
         >
-          Onsale Sneakers
+          Onsale Kicks
         </Heading>
 
         {/* <Heading
