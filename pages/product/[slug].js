@@ -126,7 +126,7 @@ const ProductDetails = ({products, product}) => {
 
     <Container centerContent>
       <Flex
-        mt={["3rem", "2.5rem"]}
+        mt={["2rem", "2.5rem"]}
         flexDir={["column", "row"]}
         alignItems="center"
         justifyContent="center"
@@ -173,7 +173,7 @@ const ProductDetails = ({products, product}) => {
               flexDir='column'
             >
               <Heading
-                mt="0.9rem"
+                mt="1.3rem"
                 size="lg"
               >
                 {name}
@@ -274,7 +274,7 @@ const ProductDetails = ({products, product}) => {
         flexDir="column"
         justifyContent="center"
         alignItems="center"
-        mt={["4rem" ,"2rem"]}
+        mt={["4rem" ,"4rem"]}
       >
         <Heading
           size={["lg","lg",'xl']}
@@ -287,7 +287,7 @@ const ProductDetails = ({products, product}) => {
           whiteSpace="nowrap"
           gap={["1rem" ,"1.5rem"]}
           overflowX="scroll"
-          w={["20rem", "50rem", "80rem"]}
+          w={["22rem", "50rem", "80rem"]}
           flexDir="row"
         >
           {products?.map((item)=>(
