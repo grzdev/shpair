@@ -6,7 +6,7 @@ import { useColorModeValue } from '@chakra-ui/react'
 
 const HeroBanner = ({heroBanner}) => {
   
-  const bannerColor = useColorModeValue('#70A1C8' , '#577e9d')
+  const bannerColor = useColorModeValue('#81b6e2' , '#6d9fc8')
   const header = useColorModeValue("white" , "#2f2f2f")
   const shopBox = useColorModeValue("#BF272C", "#c42227")
 
@@ -43,6 +43,9 @@ const HeroBanner = ({heroBanner}) => {
         mt='1rem'
         display='flex'
         flexDir={["column", 'row']}
+        // boxShadow= "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;"
+        // boxShadow=" rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"
+        // boxShadow = "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;"
         boxShadow= "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;"
       >
         <Flex

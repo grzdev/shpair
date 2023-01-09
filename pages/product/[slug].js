@@ -11,6 +11,7 @@ const ProductDetails = ({products, product}) => {
   const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext()
   const ratingColor = useColorModeValue("#e0242c", "#70A1C8")
   const colorScheme = useColorModeValue("red", "blue")
+  const headerColor = useColorModeValue("#324361", "white")
 
   const handleBuyNow = () => {
     onAdd(product, qty);
@@ -125,7 +126,7 @@ const ProductDetails = ({products, product}) => {
 
     <Container centerContent>
       <Flex
-        mt="4rem"
+        mt={["3rem", "2.5rem"]}
         flexDir={["column", "row"]}
         alignItems="center"
         justifyContent="center"
@@ -143,33 +144,36 @@ const ProductDetails = ({products, product}) => {
               src={urlFor(image && image[index])}
               // w="25rem"
               // h="25rem"
+              boxSize={["20rem","30rem"]}
+              borderRadius="0.5rem"
             />  
 
-            {/* <Flex>
+            <Flex
+              flexDir=""
+              mt={["0.7rem", "", ""]}
+            >
               {image?.map((item, i)=>(
-                  <img
-                    key={i}
-                    src={urlFor(item)}
-                    className={i === index ? 'small-image selected-image' : 'small-image'}
-                    onMouseEnter={()=> setIndex(i)}
-                  />
                   <Image
                     key={i}
                     src={urlFor(item)}
                     onMouseEnter={()=> setIndex(i)}
+                    boxSize={["2rem", "2rem", "2.5rem"]}
+                    mr="1rem"
+                    borderRadius="0.5rem"
                   />
                 ))}
-            </Flex> */}
+            </Flex>
           </Box>
 
           <Box
             w={["xs", "md"]}
+            ml={["", "", "-6rem"]}
           >
             <Flex
               flexDir='column'
             >
               <Heading
-                mt="4rem"
+                mt="0.9rem"
                 size="lg"
               >
                 {name}
@@ -197,7 +201,7 @@ const ProductDetails = ({products, product}) => {
 
               
             <Box
-              mt="1.5rem"
+              mt="1rem"
             >
               <Heading
                 size="sm"
@@ -215,7 +219,7 @@ const ProductDetails = ({products, product}) => {
             </Box>
 
             <Heading
-              mt="1.7rem"
+              mt="1.5rem"
               color={ratingColor}
               size="md"
             >
@@ -223,7 +227,7 @@ const ProductDetails = ({products, product}) => {
             </Heading>
 
               <Flex
-                mt="3rem"
+                mt="1.6rem"
                 justifyContent={["center", "", ""]}
                 alignItems={["center", "", ""]}
               >
@@ -251,6 +255,48 @@ const ProductDetails = ({products, product}) => {
           </Box>
         {/* </Flex> */}
        
+      </Flex>
+
+      {/* <div className='maylike-products-wrapper'>
+    //       <h2>You may also like</h2>
+    //       <div className='marquee'>
+    //         <div className='maylike-products-container track'>
+    //           {products?.map((item)=>(
+    //             <Products
+    //               key={item._id}
+    //               product={item}
+    //             />
+    //           ))}
+    //         </div>
+    //       </div> */}
+
+      <Flex
+        flexDir="column"
+        justifyContent="center"
+        alignItems="center"
+        mt={["4rem" ,"2rem"]}
+      >
+        <Heading
+          size={["lg","lg",'xl']}
+          color={headerColor}
+        >
+          You may also like..
+        </Heading>
+        <Flex
+          mt={["0.5rem","1.6rem","1.4rem"]}
+          whiteSpace="nowrap"
+          gap={["1rem" ,"1.5rem"]}
+          overflowX="scroll"
+          w={["20rem", "50rem", "80rem"]}
+          flexDir="row"
+        >
+          {products?.map((item)=>(
+            <Products
+              key={item._id}
+              product={item}
+            />
+          ))}
+        </Flex>
       </Flex>
     </Container>
   )

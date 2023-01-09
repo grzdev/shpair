@@ -45,6 +45,7 @@ const FooterBanner = ({footerBanner: { discount, desc, largeText1, largeText2, s
         mt={["2rem", "3rem",'6rem']}
         display='flex'
         flexDir={["column", 'row']}
+        // boxShadow= "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;"
         boxShadow= "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;"
         alignItems='center'
         justifyContent='center'
