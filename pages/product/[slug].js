@@ -219,7 +219,7 @@ const ProductDetails = ({products, product}) => {
             </Box>
 
             <Heading
-              mt="1.5rem"
+              mt="1rem"
               color={ratingColor}
               size="md"
             >
@@ -227,7 +227,7 @@ const ProductDetails = ({products, product}) => {
             </Heading>
 
               <Flex
-                mt="1.6rem"
+                mt="2.3rem"
                 justifyContent={["center", "", ""]}
                 alignItems={["center", "", ""]}
               >
