@@ -242,7 +242,7 @@ const ProductDetails = ({products, product}) => {
                 </Button>
               
                 <Button
-                  onClick={()=> onAdd(product, qty)}
+                  onClick={handleBuyNow}
                   colorScheme={colorScheme}
                   size="md"
                 >
