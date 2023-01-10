@@ -226,33 +226,77 @@ const ProductDetails = ({products, product}) => {
               ${price}
             </Heading>
 
-              <Flex
-                mt="2.3rem"
-                justifyContent={["center", "", ""]}
-                alignItems={["center", "", ""]}
+            <Box
+              display="flex"
+              flexDir="row"
+              mt="1.7rem"
+              mr="auto"
+            >
+              <Box>
+                <Heading
+                  size="sm"
+                  mr="1rem"
+                >
+                  Quantity: 
+                </Heading>
+              </Box>
+
+              <Box
+                display="flex"
+                flexDir="row"
               >
                 <Button
-                  onClick={()=> onAdd(product, qty)}
-                  variant='outline'
-                  mr="1.7rem"
-                  colorScheme={colorScheme}
-                  size="md"
+                  size="xs"
+                  mr="0.5rem"
+                  // color={colorScheme}
+                  onClick={decQty}
                 >
-                  Add to cart
+                  <AiOutlineMinus />
                 </Button>
-              
+
+                <Text
+                  mr="0.5rem"
+                >
+                  {qty}
+                </Text>
+
                 <Button
-                  onClick={handleBuyNow}
-                  colorScheme={colorScheme}
-                  size="md"
+                  size="xs"
+                  // color={colorScheme}
+                  onClick={incQty}
                 >
-                  Buy Now
+                  <AiOutlinePlus />
                 </Button>
-              </Flex>
+              </Box>
+            </Box>
+
+            <Flex
+              mt="2.3rem"
+              justifyContent={["center", "", ""]}
+              alignItems={["center", "", ""]}
+            >
+              <Button
+                onClick={()=> onAdd(product, qty)}
+                variant='outline'
+                mr="1.7rem"
+                colorScheme={colorScheme}
+                size="md"
+              >
+                Add to cart
+              </Button>
+              
+              <Button
+                onClick={handleBuyNow}
+                colorScheme={colorScheme}
+                size="md"
+              >
+                Buy Now
+              </Button>
             </Flex>
+          </Flex>
 
             
-          </Box>
+        </Box>
         {/* </Flex> */}
        
       </Flex>
