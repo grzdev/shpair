@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { toast } from 'react-hot-toast';
+// import { toast } from 'react-hot-toast';
+import { useToast } from '@chakra-ui/react'
 
 const Context = createContext();
 
@@ -9,6 +10,7 @@ export const StateContext = ({ children }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
+  const toast = useToast()
 
   let foundProduct;
   let index;
@@ -34,7 +36,15 @@ export const StateContext = ({ children }) => {
       setCartItems([...cartItems, { ...product }]);
     }
 
-    toast.success(`${qty} ${product.name} added to the cart.`);
+    toast({
+      title: `${qty} ${product.name} added to the cart`,
+      position: 'top-middle',
+      // description: "We've created your account for you.",
+      status: 'success',
+      duration: 9000,
+      isClosable: true,
+    })
+    // toast.success(`${qty} ${product.name} added to the cart.`);
   } 
 
   const onRemove = (product) => {

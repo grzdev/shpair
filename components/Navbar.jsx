@@ -16,7 +16,8 @@ import { TbShoppingCartOff } from "react-icons/tb"
 import { useColorModeValue } from '@chakra-ui/react'
 import { MdOutlineDelete } from "react-icons/md"
 import getStripe from '../lib/getSripe'
-import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
+import { useToast } from '@chakra-ui/react'
 
 const Navbar = () => {
   const { showCart, setShowCart, totalQuantities } = useStateContext()
@@ -27,7 +28,8 @@ const Navbar = () => {
   const colorScheme = useColorModeValue("red", "#90CDF4")
 
   const { totalPrice, cartItems,  toggleCartItemQuanitity, onRemove } = useStateContext();
-  
+  const toast = useToast()
+
   const handleCheckout = async () => {
     const stripe = await getStripe();
 
@@ -43,7 +45,16 @@ const Navbar = () => {
     
     const data = await response.json();
 
-    toast.loading('Redirecting...');
+    // toast.loading('Redirecting...');
+    toast({
+      title: 'Redirecting.',
+      position: 'top-middle',
+      // description: "We've created your account for you.",
+      status: 'loading',
+      duration: 9000,
+      isClosable: true,
+    })
+
 
     stripe.redirectToCheckout({ sessionId: data.id });
   }
@@ -188,24 +199,28 @@ const Navbar = () => {
                         justifyContent="center"
                         alignItems="center"
                       >
-                        <Heading
-                          size={["xs","sm"]}
-                          mr={["2rem", "5rem"]}
+                        <Text
+                          // size={["xs","xs"]}
+                          fontSize={["0.7rem", "0.9rem"]}
+                          mr={["2rem", "4rem"]}
+                          fontWeight="600"
                         >
                           {item.name}
-                        </Heading>
-                        <Heading
-                          size="xs" 
-                          mt={["-0.8rem", ""]}
+                        </Text>
+                        <Text
+                          // size="xs" 
+                          fontSize={["0.7rem", "0.9rem"]}
+                          mt={["", "0.3rem"]}
+                          fontWeight="600"
                         >
                           ${item.price}
-                        </Heading>
+                        </Text>
                       </Box>
 
                       <Box
                         // justifyContent="flex-end"
                         display="flex"
-                        mt={["0.9rem","3rem"]}
+                        mt={["1.1rem","2.5rem"]}
                       >
                         <Box
                           display="flex"
@@ -241,10 +256,10 @@ const Navbar = () => {
                           onClick={() => onRemove(item)}
                           size="xs"
                           mr="1.4rem"
-                          variant='ghost'
+                          // variant='ghost'
                         >
                           <TiDeleteOutline
-                            size="sm"
+                            // size="sm"
                             color={colorScheme}
                           />
                         </Button>
