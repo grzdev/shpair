@@ -64,7 +64,7 @@ const  Home = ({products, bannerData}) => {
       </Flex>
 
       <Flex
-        mt="2rem"
+        mt="1rem"
       >
         <FooterBanner footerBanner={bannerData && bannerData[0]}/>
       </Flex>
