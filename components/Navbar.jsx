@@ -159,7 +159,7 @@ const Navbar = () => {
                   justifyContent="center"
                   alignItems="center"
                   flexDir="column"
-                  mt="12rem"
+                  mt={[ "9rem","12rem"]}
                   // mt={["0.5rem","1.6rem","1.4rem"]}
                   whiteSpace="nowrap"
                   gap= "1.5rem"
@@ -195,7 +195,7 @@ const Navbar = () => {
                         flexDir="row"
                         display="flex"
                         mr="2rem"
-                        mt="0.5rem"
+                        // mt="0.5rem"
                         justifyContent="center"
                         alignItems="center"
                       >

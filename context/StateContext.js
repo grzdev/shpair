@@ -41,7 +41,7 @@ export const StateContext = ({ children }) => {
       position: 'top-middle',
       // description: "We've created your account for you.",
       status: 'success',
-      duration: 9000,
+      duration: 1500,
       isClosable: true,
     })
     // toast.success(`${qty} ${product.name} added to the cart.`);
