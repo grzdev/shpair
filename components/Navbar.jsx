@@ -184,8 +184,9 @@ const Navbar = () => {
                   >
                     <Image
                       src={urlFor(item?.image[0])}
-                      boxSize={["3.5rem","8rem"]}
-                      mr={["0.4rem","1rem"]}
+                      boxSize={["4.5rem","8rem"]}
+                      mr={["1rem","1rem"]}
+                      borderRadius="0.3rem"
                     />
 
                     <Flex
@@ -201,8 +202,9 @@ const Navbar = () => {
                       >
                         <Text
                           // size={["xs","xs"]}
+                          mt={["0.6rem", "2rem"]}
                           fontSize={["0.5rem", "0.9rem"]}
-                          mr={["6rem", "4rem"]}
+                          mr={["4.5rem", "4rem"]}
                           fontWeight="600"
                         >
                           {item.name}
