@@ -184,7 +184,7 @@ const Navbar = () => {
                   >
                     <Image
                       src={urlFor(item?.image[0])}
-                      boxSize={["5rem","8rem"]}
+                      boxSize={["3.5rem","8rem"]}
                       mr={["0.4rem","1rem"]}
                     />
 
@@ -201,8 +201,8 @@ const Navbar = () => {
                       >
                         <Text
                           // size={["xs","xs"]}
-                          fontSize={["0.7rem", "0.9rem"]}
-                          mr={["2rem", "4rem"]}
+                          fontSize={["0.5rem", "0.9rem"]}
+                          mr={["6rem", "4rem"]}
                           fontWeight="600"
                         >
                           {item.name}
@@ -220,7 +220,7 @@ const Navbar = () => {
                       <Box
                         // justifyContent="flex-end"
                         display="flex"
-                        mt={["1.1rem","2.5rem"]}
+                        mt={["0.5rem","2.5rem"]}
                       >
                         <Box
                           display="flex"
@@ -229,7 +229,7 @@ const Navbar = () => {
                           mr="auto"
                         >
                           <Button
-                            size="xs"
+                            size={["2xs","xs"]}
                             mr="0.5rem"
                             // color={colorScheme}
                             onClick={() => toggleCartItemQuanitity(item._id, 'dec') }
@@ -244,8 +244,9 @@ const Navbar = () => {
                           </Text>
 
                           <Button
-                            size="xs"
+                            size={["2xs","xs"]}
                             // color={colorScheme}
+                            // variant={["solid","ghost"]}
                             onClick={() => toggleCartItemQuanitity(item._id, 'inc') }
                           >
                             <AiOutlinePlus />
@@ -255,7 +256,7 @@ const Navbar = () => {
                         <Button
                           onClick={() => onRemove(item)}
                           size="xs"
-                          mr="1.4rem"
+                          mr="1.7rem"
                           // variant='ghost'
                         >
                           <TiDeleteOutline
@@ -307,7 +308,7 @@ const Navbar = () => {
                           variant='solid'
                           mt="1rem"
                           mb="2rem"
-                          size="lg"
+                          size={["md","lg"]}
                           color="white"
                           // w="20rem"
                         >

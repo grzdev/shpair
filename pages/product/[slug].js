@@ -318,7 +318,8 @@ const ProductDetails = ({products, product}) => {
         flexDir="column"
         justifyContent="center"
         alignItems="center"
-        mt={["4rem" ,"4rem"]}
+        mt={["7rem" ,"7rem"]}
+        mb={["-5rem", "-5rem"]}
       >
         <Heading
           size={["lg","lg",'xl']}
