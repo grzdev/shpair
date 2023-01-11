@@ -212,7 +212,7 @@ const Navbar = () => {
                         <Text
                           // size="xs" 
                           fontSize={["0.7rem", "0.9rem"]}
-                          mt={["", "0.3rem"]}
+                          mt={["0.6rem", "2rem"]}
                           fontWeight="600"
                         >
                           ${item.price}
