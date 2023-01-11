@@ -231,7 +231,7 @@ const Navbar = () => {
                           mr="auto"
                         >
                           <Button
-                            size={["2xs","xs"]}
+                            size="xs"
                             mr="0.5rem"
                             // color={colorScheme}
                             onClick={() => toggleCartItemQuanitity(item._id, 'dec') }
@@ -246,7 +246,7 @@ const Navbar = () => {
                           </Text>
 
                           <Button
-                            size={["2xs","xs"]}
+                            size="xs"
                             // color={colorScheme}
                             // variant={["solid","ghost"]}
                             onClick={() => toggleCartItemQuanitity(item._id, 'inc') }
