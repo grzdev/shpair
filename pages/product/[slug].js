@@ -4,6 +4,8 @@ import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-
 import { Products } from '../../components'
 import { useStateContext } from '../../context/StateContext'
 import { Box, Container, Flex, Text, Button, Heading, HStack, Image, useColorModeValue,  } from '@chakra-ui/react'
+import getStripe from '../../lib/getSripe'
+import { useToast } from '@chakra-ui/react'
 
 const ProductDetails = ({products, product}) => {
   const { image, name, details, price } = product;
@@ -12,6 +14,37 @@ const ProductDetails = ({products, product}) => {
   const ratingColor = useColorModeValue("#e0242c", "#70A1C8")
   const colorScheme = useColorModeValue("red", "blue")
   const headerColor = useColorModeValue("#324361", "white")
+  const { cartItems } = useStateContext()
+  const toast = useToast()
+  
+  const handleCheckout = async () => {
+    const stripe = await getStripe();
+
+    const response = await fetch('/api/stripe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cartItems),
+    });
+
+    if(response.statusCode === 500) return;
+    
+    const data = await response.json();
+
+    // toast.loading('Redirecting...');
+    toast({
+      title: 'Redirecting.',
+      position: 'top-middle',
+      // description: "We've created your account for you.",
+      status: 'loading',
+      duration: 9000,
+      isClosable: true,
+    })
+
+
+    stripe.redirectToCheckout({ sessionId: data.id });
+  }
 
   const handleBuyNow = () => {
     onAdd(product, qty);
@@ -286,7 +319,7 @@ const ProductDetails = ({products, product}) => {
               </Button>
               
               <Button
-                onClick={handleBuyNow}
+                onClick={handleCheckout}
                 colorScheme={colorScheme}
                 size="md"
               >
