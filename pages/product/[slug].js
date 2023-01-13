@@ -19,7 +19,7 @@ const ProductDetails = ({products, product}) => {
   const { cartItems } = useStateContext()
   const toast = useToast()
   
-  const handleCheckout = async () => {
+  const handleBuyNow = async () => {
     const stripe = await getStripe();
 
     const response = await fetch('/api/stripe', {
@@ -37,7 +37,7 @@ const ProductDetails = ({products, product}) => {
     // toast.loading('Redirecting...');
     toast({
       title: 'Redirecting.',
-      position: 'top-middle',
+      position: 'bottom-middle',
       // description: "We've created your account for you.",
       status: 'loading',
       duration: 9000,
@@ -48,11 +48,11 @@ const ProductDetails = ({products, product}) => {
     stripe.redirectToCheckout({ sessionId: data.id });
   }
 
-  const handleBuyNow = () => {
-    onAdd(product, qty);
+  // const handleBuyNow = () => {
+  //   onAdd(product, qty);
 
-    setShowCart(true);
-  }
+  //   setShowCart(true);
+  // }
 
   return (
     // <div>
@@ -321,7 +321,7 @@ const ProductDetails = ({products, product}) => {
               </Button>
               
               <Button
-                onClick={handleCheckout}
+                onClick={handleBuyNow}
                 colorScheme={colorScheme}
                 size="md"
               >
@@ -383,6 +383,7 @@ const ProductDetails = ({products, product}) => {
             mt={["1.6rem",""]}
             colorScheme={colorScheme}
             size={["sm", "md"]}
+            mb={["2rem", "1rem"]}
           >
             <ChevronLeftIcon
               fontSize={["1.6rem",""]}

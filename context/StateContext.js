@@ -38,7 +38,7 @@ export const StateContext = ({ children }) => {
 
     toast({
       title: `${qty} ${product.name} added to the cart`,
-      position: 'top-middle',
+      position: 'bottom-middle',
       // description: "We've created your account for you.",
       status: 'success',
       duration: 1500,
