@@ -7,7 +7,8 @@ import { Box, Container, Flex, Text, Button, Heading, HStack, Image, useColorMod
 import getStripe from '../../lib/getSripe'
 import { useToast } from '@chakra-ui/react'
 import { ChevronLeftIcon } from "@chakra-ui/icons"
-import { Link } from '@chakra-ui/react'
+// import { Link } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 
 const ProductDetails = ({products, product}) => {
   const { image, name, details, price } = product;
@@ -18,6 +19,7 @@ const ProductDetails = ({products, product}) => {
   const headerColor = useColorModeValue("#324361", "white")
   const { cartItems } = useStateContext()
   const toast = useToast()
+  const router = useRouter()
   
   const handleBuyNow = async () => {
     const stripe = await getStripe();
@@ -378,18 +380,19 @@ const ProductDetails = ({products, product}) => {
           ))}
         </Flex>
 
-        <Link href="/">
+        {/* <Link href="/"> */}
           <Button
             mt={["1.6rem",""]}
             colorScheme={colorScheme}
             size={["sm", "md"]}
             mb={["2rem", "1rem"]}
+            onClick={() => router.back()}
           >
             <ChevronLeftIcon
               fontSize={["1.6rem",""]}
             />
           </Button>
-        </Link>
+        {/* </Link> */}
        
       </Flex>
     </Container>
