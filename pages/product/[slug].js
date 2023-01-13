@@ -309,8 +309,8 @@ const ProductDetails = ({products, product}) => {
 
             <Flex
               mt="2.3rem"
-              justifyContent={["center", "", ""]}
-              alignItems={["center", "", ""]}
+              // justifyContent={["center", "", ""]}
+              // alignItems={["center", "", ""]}
             >
               <Button
                 onClick={()=> onAdd(product, qty)}
