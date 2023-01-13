@@ -87,17 +87,17 @@ const Navbar = () => {
       >
         <Link href='/'>
           <TbShoe
-            fontSize="2rem"
+            fontSize="1.5rem"
             color='#7CB9E8'
            />
         </Link>
         
         <Link href='/'>
           <Text
-            fontSize={['1.15rem', '1,2rem',  "1.3rem"]}
+            fontSize={['1rem', '0.8rem',  "0.9rem"]}
             fontWeight="700"
-            ml="0.1rem"
-            mt={["0.17rem", "none", "0.2rem"]}
+            // ml="0.1rem"
+            mt={["0.1rem", "none", "0.1rem"]}
           >
             shpair
           </Text>
@@ -105,12 +105,13 @@ const Navbar = () => {
       </Flex>
 
       <Flex
-        
+        mt={["2rem", "1rem"]}
       >
         <Button
          onClick={toggleColorMode}
          mr='0.6rem'
-         size={["sm", "md", "md"]}
+         size={["xs", "sm", "sm"]}
+         mt={["0.4rem", "1rem"]}
         >
           {colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
         </Button>
@@ -119,7 +120,8 @@ const Navbar = () => {
           // onClick={()=> setShowCart(true)}
           ref={btnRef}
           onClick={onOpen}
-          size={["sm", "md", "md"]}
+          size={["xs", "sm", "sm"]}
+          mt={["0.4rem", "1rem"]}
         >
           <GiShoppingCart
             fontSize="1.6rem"

@@ -18,13 +18,13 @@ const textColor = useColorModeValue('white', 'white')
         h='30rem'
         bg={bgColor}
         // borderRadius='1rem'
-        mt='6.54rem'
+        mt={["4.6rem",'6.57rem']}
         display='flex'
         flexDir={["column", 'column']}
         boxShadow= "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;"
         justifyContent='center'
         alignItems="center"
-        mb="auto"
+        mb="-1rem"
         // mb="-8"
       >
         <Flex

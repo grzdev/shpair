@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { urlFor } from '../lib/client'
 import { Container, Box, Text, Heading, Flex, Image, VStack, Button} from '@chakra-ui/react'
 import { useColorModeValue } from '@chakra-ui/react'
+import { ChevronDownIcon } from "@chakra-ui/icons"
 
 const HeroBanner = ({heroBanner}) => {
   
@@ -40,7 +41,7 @@ const HeroBanner = ({heroBanner}) => {
         h='35rem'
         bg={bannerColor}
         borderRadius='1rem'
-        mt='1rem'
+        mt='1.8rem'
         display='flex'
         flexDir={["column", 'row']}
         // boxShadow= "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;"
@@ -91,7 +92,7 @@ const HeroBanner = ({heroBanner}) => {
             display='flex'
             mt={["19rem", "3rem" ,"4rem"]}
           >
-            Shop now
+            Shop now <ChevronDownIcon/>
           </Box>
         </Flex>
 

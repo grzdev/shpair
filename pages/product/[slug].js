@@ -6,6 +6,8 @@ import { useStateContext } from '../../context/StateContext'
 import { Box, Container, Flex, Text, Button, Heading, HStack, Image, useColorModeValue,  } from '@chakra-ui/react'
 import getStripe from '../../lib/getSripe'
 import { useToast } from '@chakra-ui/react'
+import { ChevronLeftIcon } from "@chakra-ui/icons"
+import { Link } from '@chakra-ui/react'
 
 const ProductDetails = ({products, product}) => {
   const { image, name, details, price } = product;
@@ -375,6 +377,19 @@ const ProductDetails = ({products, product}) => {
             />
           ))}
         </Flex>
+
+        <Link href="/">
+          <Button
+            mt={["1.6rem",""]}
+            colorScheme={colorScheme}
+            size={["sm", "md"]}
+          >
+            <ChevronLeftIcon
+              fontSize={["1.6rem",""]}
+            />
+          </Button>
+        </Link>
+       
       </Flex>
     </Container>
   )
