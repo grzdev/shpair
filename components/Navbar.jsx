@@ -51,7 +51,7 @@ const Navbar = () => {
       position: 'bottom-middle',
       // description: "We've created your account for you.",
       status: 'loading',
-      duration: 9000,
+      duration: 2000,
       isClosable: true,
     })
 
