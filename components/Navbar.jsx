@@ -48,7 +48,7 @@ const Navbar = () => {
     // toast.loading('Redirecting...');
     toast({
       title: 'Redirecting.',
-      position: 'top-middle',
+      position: 'bottom-middle',
       // description: "We've created your account for you.",
       status: 'loading',
       duration: 9000,
