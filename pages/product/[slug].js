@@ -17,38 +17,38 @@ const ProductDetails = ({products, product}) => {
   const ratingColor = useColorModeValue("#e0242c", "#70A1C8")
   const colorScheme = useColorModeValue("red", "blue")
   const headerColor = useColorModeValue("#324361", "white")
-  const { cartItems } = useStateContext()
+  // const { cartItems } = useStateContext()
   const toast = useToast()
   const router = useRouter()
   
-  const handleBuyNow = async () => {
-    const stripe = await getStripe();
+  // const handleBuyNow = async () => {
+  //   const stripe = await getStripe();
 
-    const response = await fetch('/api/stripe', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(cartItems),
-    });
+  //   const response = await fetch('/api/stripe', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(product),
+  //   });
 
-    if(response.statusCode === 500) return;
+  //   if(response.statusCode === 500) return;
     
-    const data = await response.json();
+  //   const data = await response.json();
 
-    // toast.loading('Redirecting...');
-    toast({
-      title: 'Redirecting.',
-      position: 'bottom-middle',
-      // description: "We've created your account for you.",
-      status: 'loading',
-      duration: 2000,
-      isClosable: true,
-    })
+  //   // toast.loading('Redirecting...');
+  //   toast({
+  //     title: 'Redirecting.',
+  //     position: 'bottom-middle',
+  //     // description: "We've created your account for you.",
+  //     status: 'loading',
+  //     duration: 2000,
+  //     isClosable: true,
+  //   })
 
 
-    stripe.redirectToCheckout({ sessionId: data.id });
-  }
+  //   stripe.redirectToCheckout({ sessionId: data.id });
+  // }
 
   // const handleBuyNow = () => {
   //   onAdd(product, qty);
@@ -309,8 +309,8 @@ const ProductDetails = ({products, product}) => {
 
             <Flex
               mt="2.3rem"
-              justifyContent={["center", "", ""]}
-              alignItems={["center", "", ""]}
+              // justifyContent={["center", "", ""]}
+              // alignItems={["center", "", ""]}
             >
               <Button
                 onClick={()=> onAdd(product, qty)}
@@ -322,13 +322,13 @@ const ProductDetails = ({products, product}) => {
                 Add to cart
               </Button>
               
-              <Button
+              {/* <Button
                 onClick={handleBuyNow}
                 colorScheme={colorScheme}
                 size="md"
               >
                 Buy Now
-              </Button>
+              </Button> */}
             </Flex>
           </Flex>
 
