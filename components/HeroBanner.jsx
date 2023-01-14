@@ -7,7 +7,7 @@ import { ChevronDownIcon } from "@chakra-ui/icons"
 
 const HeroBanner = ({heroBanner}) => {
   
-  const bannerColor = useColorModeValue('#81b6e2' , '#6d9fc8')
+  const bannerColor = useColorModeValue('#CECDC9' , '#6d9fc8')
   const header = useColorModeValue("white" , "#2f2f2f")
   const shopBox = useColorModeValue("#BF272C", "#c42227")
 
